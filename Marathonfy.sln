@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marathonfy.Web", "src\Marat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marathonfy.DataLoader", "src\Marathonfy.DataLoader\Marathonfy.DataLoader.csproj", "{6AB3CF6E-E9C7-49DB-A241-F46AB07A73F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marathonfy.Data", "src\Marathonfy.Data\Marathonfy.Data.csproj", "{E0AB8879-07B5-4CF8-B48A-10DD1AA300C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,9 +28,14 @@ Global
 		{6AB3CF6E-E9C7-49DB-A241-F46AB07A73F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AB3CF6E-E9C7-49DB-A241-F46AB07A73F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AB3CF6E-E9C7-49DB-A241-F46AB07A73F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0AB8879-07B5-4CF8-B48A-10DD1AA300C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0AB8879-07B5-4CF8-B48A-10DD1AA300C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0AB8879-07B5-4CF8-B48A-10DD1AA300C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0AB8879-07B5-4CF8-B48A-10DD1AA300C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C34D63B8-9F3E-4FFC-9CCD-215D072351B9} = {EBB0F307-6C46-4CD4-9264-1D078F24B2D7}
 		{6AB3CF6E-E9C7-49DB-A241-F46AB07A73F7} = {EBB0F307-6C46-4CD4-9264-1D078F24B2D7}
+		{E0AB8879-07B5-4CF8-B48A-10DD1AA300C4} = {EBB0F307-6C46-4CD4-9264-1D078F24B2D7}
 	EndGlobalSection
 EndGlobal

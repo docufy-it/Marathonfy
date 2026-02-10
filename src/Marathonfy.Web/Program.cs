@@ -1,7 +1,16 @@
+using Marathonfy.Data.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Register DbContext - use environment to determine connection string
+var environment = builder.Environment.IsProduction() ? "ProductionConnection" : "TestConnection";
+var connectionString = builder.Configuration.GetConnectionString(environment);
+builder.Services.AddDbContext<MarathonfyDbContext>(options =>
+    options.UseSqlServer(connectionString));
 
 var app = builder.Build();
 
