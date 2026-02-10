@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EBB0F307-6C46-4CD4-9264-1D078F24B2D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marathonfy.Web", "src\Marathonfy.Web\Marathonfy.Web.csproj", "{C34D63B8-9F3E-4FFC-9CCD-215D072351B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marathonfy.DataLoader", "src\Marathonfy.DataLoader\Marathonfy.DataLoader.csproj", "{6AB3CF6E-E9C7-49DB-A241-F46AB07A73F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C34D63B8-9F3E-4FFC-9CCD-215D072351B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C34D63B8-9F3E-4FFC-9CCD-215D072351B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C34D63B8-9F3E-4FFC-9CCD-215D072351B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C34D63B8-9F3E-4FFC-9CCD-215D072351B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AB3CF6E-E9C7-49DB-A241-F46AB07A73F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AB3CF6E-E9C7-49DB-A241-F46AB07A73F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AB3CF6E-E9C7-49DB-A241-F46AB07A73F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AB3CF6E-E9C7-49DB-A241-F46AB07A73F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C34D63B8-9F3E-4FFC-9CCD-215D072351B9} = {EBB0F307-6C46-4CD4-9264-1D078F24B2D7}
+		{6AB3CF6E-E9C7-49DB-A241-F46AB07A73F7} = {EBB0F307-6C46-4CD4-9264-1D078F24B2D7}
+	EndGlobalSection
+EndGlobal
