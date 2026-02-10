@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Marathonfy.Data.Models;
+using Marathonfy.DataLoader.Services;
 using Microsoft.EntityFrameworkCore;
 
 // Create host with dependency injection
@@ -22,6 +23,11 @@ var host = Host.CreateDefaultBuilder(args)
         services.AddDbContext<MarathonfyDbContext>(options =>
             options.UseSqlServer(connectionString));
 
+        // Register services
+        services.AddSingleton<MarathonScraperFactory>();
+        services.AddScoped<MarathonResultRepository>();
+        services.AddScoped<InteractiveMenu>();
+
         // Add logging
         services.AddLogging(logging =>
         {
@@ -31,33 +37,48 @@ var host = Host.CreateDefaultBuilder(args)
     })
     .Build();
 
-Console.WriteLine("Marathonfy Data Loader");
-Console.WriteLine("======================");
+Console.WriteLine("╔════════════════════════════════════════╗");
+Console.WriteLine("║   Marathonfy Data Loader v1.0          ║");
+Console.WriteLine("║   Marathon Results Scraper & Importer  ║");
+Console.WriteLine("╚════════════════════════════════════════╝\n");
 
-// Get DbContext instance
+// Verify database connection
 using (var scope = host.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<MarathonfyDbContext>();
     
     try
     {
-        // Test database connection
         var canConnect = await dbContext.Database.CanConnectAsync();
         if (canConnect)
         {
-            Console.WriteLine("✓ Database connection successful!");
-            Console.WriteLine($"  Database: DBMarathonfyTest");
+            Console.WriteLine("✓ Database connection successful!\n");
         }
         else
         {
-            Console.WriteLine("✗ Cannot connect to database");
+            Console.WriteLine("✗ Cannot connect to database\n");
+            return;
         }
     }
     catch (Exception ex)
     {
-        Console.WriteLine($"✗ Database error: {ex.Message}");
+        Console.WriteLine($"✗ Database error: {ex.Message}\n");
+        return;
     }
 }
 
-Console.WriteLine("\nApplication ready. Add your data loading logic here.");
+// Run interactive menu
+var cts = new CancellationTokenSource();
+Console.CancelKeyPress += (s, e) =>
+{
+    e.Cancel = true;
+    cts.Cancel();
+};
+
+using (var scope = host.Services.CreateScope())
+{
+    var menu = scope.ServiceProvider.GetRequiredService<InteractiveMenu>();
+    await menu.RunAsync(cts.Token);
+}
+
 
